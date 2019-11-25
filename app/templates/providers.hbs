@@ -1,0 +1,19 @@
+
+
+
+
+<h1>Providers</h1>
+<div class="flex-container">
+  {{#each this.model as |provider|}}
+    <div class="provider-card">
+      <h3>{{provider.name}}</h3>
+      <h4>{{provider.description}}</h4>
+      <a href={{provider.website}}>Website</a>
+    </div>
+  {{/each}}
+</div>
+
+
+{{outlet}}
+
+{{outlet}}
