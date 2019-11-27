@@ -4,7 +4,6 @@ import { reads } from '@ember/object/computed'
 export default Service.extend({
     googleMapsApi: service(),
     google: reads('googleMapsApi.google'),
-    geocoder: null,
 
     init(){
         this._super(...arguments)
@@ -14,7 +13,7 @@ export default Service.extend({
         })
     },
     decode(address){
-        this.geocoder.geocode({address: address}, function(results, status){
+        this.get('geocoder').geocode({address: address}, function(results, status){
             if (status == 'OK'){
                 return results
             }
