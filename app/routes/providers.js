@@ -8,7 +8,7 @@ export default Route.extend({
         .then(resp => resp.json())
         .then(json => {
             return json.map(provider => {
-                provider.latlon = this.geocoder.decode(provider.address1 + " " + provider.address2 + " " + provider.city + " " + provider.state)
+                provider.latlon = this.get('geocoder').decode(provider.address1 + " " + provider.address2 + " " + provider.city + " " + provider.state)
                 return provider
             });
         })
