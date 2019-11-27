@@ -10,15 +10,13 @@ export default Service.extend({
       }),
     init(){
         this._super(...arguments)
-        // this.get('google').then((google) => {
-        //     let geocoder = new google.maps.Geocoder()
-        //     this.set('geocoder', geocoder)
-        // })
     },
-    decode(address){
-        this.get('geocoder').then(geocoder => geocoder.geocode({address: address}, function(results, status){
+    async decode(address){
+        return await this.get('geocoder').then(geocoder => geocoder.geocode({address: address}, function(results, status){
             if (status == 'OK'){
-                return results
+                const latlon = [results[0].geometry.location.lat(), results[0].geometry.location.lng()]
+                console.log(latlon)
+                return latlon
             }
         }))
     }
