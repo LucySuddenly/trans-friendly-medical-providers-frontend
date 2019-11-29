@@ -1,6 +1,8 @@
-{{g-map lat="39.0986106" lng="-98.6166598" zoom=4}}
-
-
+{{#g-map lat="39.0986106" lng="-98.6166598" zoom=4 as |g|}}
+  {{#each this.model as |provider|}}
+    {{g.marker lat=provider.latlon.[0] lng=provider.latlon.[1]}}
+  {{/each}}
+{{/g-map}}
 
 <h1>Providers</h1>
 <div class="flex-container">
@@ -9,7 +11,11 @@
       <h3>{{provider.name}}</h3>
       <h4>{{provider.description}}</h4>
       <a href={{provider.website}}>Website</a>
-      <p>{{provider.latlon}}</p>
+      <p>{{provider.address1}}</p>
+      <p>{{provider.address2}}</p>
+      <p>{{provider.city}}</p>
+      <p>{{provider.state}}</p>
+      <p>{{provider.zip}}</p>
     </div>
   {{/each}}
 </div>
