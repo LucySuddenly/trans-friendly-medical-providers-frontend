@@ -2,7 +2,11 @@
   <h1>Trans-Friendly Medical Providers</h1>
   {{#g-map lat="39.0986106" lng="-98.6166598" zoom=4 as |g|}}
     {{#each this.model as |provider|}}
-      {{g.marker lat=provider.latlon.[0] lng=provider.latlon.[1]}}
+      {{#g.marker lat=provider.latlon.[0] lng=provider.latlon.[1] as |m|}}
+        {{#m.infoWindow }}
+          {{provider.name}}
+        {{/m.infoWindow}}
+      {{/g.marker}}
     {{/each}}
   {{/g-map}}
 
