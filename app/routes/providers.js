@@ -18,7 +18,8 @@ export default Route.extend({
       let { address1, address2, city, state } = provider;
       let geocodeAddress = [address1, address2, city, state].join(' ');
       let latlon = await this.geocoder.decode(geocodeAddress);
-      return { ...provider, latlon };
+      let markerOpen = false
+      return { ...provider, latlon, markerOpen };
     });
     return await Promise.all(decodes);
   },
@@ -30,7 +31,8 @@ export default Route.extend({
       let { address1, address2, city, state } = provider;
       let geocodeAddress = [address1, address2, city, state].join(' ');
       let latlon = await this.geocoder.decode(geocodeAddress);
-      providers.push({ ...provider, latlon });
+      let markerOpen = false
+      providers.push({ ...provider, latlon, markerOpen });
     }
     return providers;
   }

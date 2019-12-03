@@ -1,9 +1,11 @@
 <div id="container">
   <h1>Trans-Friendly Medical Providers</h1>
+
+  
   {{#g-map lat="39.0986106" lng="-98.6166598" zoom=4 as |g|}}
     {{#each this.model as |provider|}}
-      {{#g.marker lat=provider.latlon.[0] lng=provider.latlon.[1] as |m|}}
-        {{#m.infoWindow }}
+      {{#g.marker lat=provider.latlon.[0] lng=provider.latlon.[1] onClick=(action "toggle") as |m|}}
+        {{#m.infoWindow isOpen=provider.markerOpen }}
           {{provider.name}}
         {{/m.infoWindow}}
       {{/g.marker}}
