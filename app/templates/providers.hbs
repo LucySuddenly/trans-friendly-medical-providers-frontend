@@ -4,7 +4,7 @@
   
   {{#g-map lat="39.0986106" lng="-98.6166598" zoom=4 as |g|}}
     {{#each this.model as |provider|}}
-      {{#g.marker lat=provider.latlon.[0] lng=provider.latlon.[1] onClick=(action "toggle") as |m|}}
+      {{#g.marker lat=provider.latlon.[0] lng=provider.latlon.[1] onClick=(action "toggle" provider) as |m|}}
         {{#m.infoWindow isOpen=provider.markerOpen }}
           {{provider.name}}
         {{/m.infoWindow}}
