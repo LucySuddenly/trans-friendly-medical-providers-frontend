@@ -4,6 +4,10 @@
   align-items: center;
 }
 
+body {
+  font-family: 'Alatsi', sans-serif;
+}
+
 .ember-google-map {
     width: 700px;
     height: 500px;
