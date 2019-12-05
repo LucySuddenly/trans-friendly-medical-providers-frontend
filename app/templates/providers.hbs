@@ -6,13 +6,25 @@
     {{#each this.model as |provider|}}
       {{#g.marker lat=provider.latlon.[0] lng=provider.latlon.[1] onClick=(action "toggle" provider) as |m|}}
         {{#m.infoWindow isOpen=provider.markerOpen }}
-          {{provider.name}}
+          <div class="provider-card">
+            <h3>{{provider.name}}</h3>
+            <h4>{{provider.description}}</h4>
+            <a href={{provider.website}}>Website</a>
+            <div class="address-box">
+              <p>{{provider.address1}}</p>
+              <p>{{provider.address2}}</p>
+              <p>{{provider.city}}</p>
+              <p>{{provider.state}}</p>
+              <p>{{provider.zip}}</p>
+            </div>
+            <p>{{provider.phone}}</p>
+          </div>
         {{/m.infoWindow}}
       {{/g.marker}}
     {{/each}}
   {{/g-map}}
 
-  <h2>Providers</h2>
+  {{!-- <h2>Providers</h2>
   <div class="flex-container">
     {{#each this.model as |provider|}}
       <div class="provider-card">
@@ -29,7 +41,7 @@
         <p>{{provider.phone}}</p>
       </div>
     {{/each}}
-  </div>
+  </div> --}}
 </div>
 
 
