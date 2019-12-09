@@ -38,7 +38,11 @@ export default Controller.extend({
             })
             .then(resp => resp.json())
             .then(json => {
-                this.set('errorMessage', json)
+                if (json.id) {
+                    location.reload()
+                } else {
+                    this.set('errorMessage', json)
+                }
             })
         }
     }
