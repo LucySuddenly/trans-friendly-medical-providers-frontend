@@ -33,6 +33,10 @@ body {
 }
 
 .address-box p {
-  
   padding: 2px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
 }
