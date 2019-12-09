@@ -36,6 +36,10 @@ export default Controller.extend({
                 }
             })
             })
+            .then(resp => resp.json())
+            .then(json => {
+                this.set('errorMessage', json)
+            })
         }
     }
 });

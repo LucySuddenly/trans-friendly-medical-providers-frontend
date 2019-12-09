@@ -23,6 +23,13 @@
       {{/g.marker}}
     {{/each}}
   {{/g-map}}
+
+      {{#if errorMessage}}
+      {{#each errorMessage as |e|}}
+        <p class="error">{{e}}</p>
+      {{/each}}
+    {{/if}}
+
     <h3>New Provider</h3>
     <form {{action "save" on="submit"}}>
       <label for="name">Name</label>
@@ -45,6 +52,8 @@
       {{input name="phone" value=this.phone}}
       <button type="submit">Submit</button>
     </form>
+
+
 
   {{!-- <h2>Providers</h2>
   <div class="flex-container">
