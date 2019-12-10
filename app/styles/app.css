@@ -11,6 +11,7 @@ body {
 .ember-google-map {
     width: 700px;
     height: 500px;
+    border-radius: 10px;
   }
 
 .flex-container {
@@ -39,10 +40,12 @@ form {
   border-width: 2px;
   border-color: black;
   padding: 10px 10px 10px 10px;
+  border-radius: 10px;
 }
 
 label, input, button {
   padding: 5px;
+  border-radius: 2px;
 }
 
 .error {
