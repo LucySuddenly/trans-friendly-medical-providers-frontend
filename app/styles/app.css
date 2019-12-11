@@ -35,19 +35,38 @@ h1,h3 {
 }
 
 form {
+  font-size: 18px;
   display: flex;
   flex-direction: column;
   border-style: solid;
   border-width: 2px;
-  border-color: black;
-  padding: 10px 10px 10px 10px;
-  border-radius: 10px;
+  border-color: lightgrey;
+  padding: 10px 32px 10px 32px;
+  border-radius: 6px;
+  background-color:rgb(245, 242, 244);
 }
 
-label, input, button {
-  padding: 5px;
+label {
+  padding: 16px 2px 4px 2px;
   border-radius: 2px;
   font-family: 'Open Sans', sans-serif;
+}
+
+input {
+  padding: 6px;
+  border-radius: 2px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+}
+
+button {
+  border-radius: 5px;
+  margin: 18px 18px 10px 18px;
+  padding: 10px 10px 10px 10px;
+  border-width: 2px;
+  font-size: 18px;
+  color: white;
+  background-color: rgb(107, 10, 75);
 }
 
 .error {
