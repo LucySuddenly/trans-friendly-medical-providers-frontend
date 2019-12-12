@@ -82,6 +82,15 @@ button {
 section:nth-child(1):after {
   content: " ";
   display: block;
-  margin: 50px 0px 10px 0px;
+  margin: 36px 0px 10px 0px;
   border-bottom: 2px solid rgb(107, 10, 75);
 }
+
+section div {
+  display: flex;
+}
+
+h4 {
+  margin: 20px 0px 0px 0px;
+}
+
