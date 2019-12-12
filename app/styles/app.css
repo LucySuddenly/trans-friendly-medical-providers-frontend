@@ -86,10 +86,6 @@ section:nth-child(1):after {
   border-bottom: 2px solid rgb(107, 10, 75);
 }
 
-section div {
-  display: flex;
-}
-
 h4 {
   margin: 20px 0px 0px 0px;
 }
