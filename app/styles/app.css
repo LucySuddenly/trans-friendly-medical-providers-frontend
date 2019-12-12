@@ -44,18 +44,24 @@ form {
   padding: 10px 32px 10px 32px;
   border-radius: 6px;
   background-color:rgb(245, 242, 244);
+  font-family: 'Open Sans', sans-serif;
+  width: 400px;
+}
+
+form section {
+  display: flex;
+  flex-direction: column;
 }
 
 label {
   padding: 16px 2px 4px 2px;
   border-radius: 2px;
-  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
 }
 
 input {
   padding: 6px;
   border-radius: 2px;
-  font-family: 'Open Sans', sans-serif;
   font-size: 16px;
 }
 
@@ -71,4 +77,11 @@ button {
 
 .error {
   color: red;
+}
+
+section:nth-child(1):after {
+  content: " ";
+  display: block;
+  margin: 50px 0px 10px 0px;
+  border-bottom: 2px solid rgb(107, 10, 75);
 }
