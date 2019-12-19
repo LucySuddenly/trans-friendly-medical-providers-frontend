@@ -16,7 +16,7 @@ export default Controller.extend({
             set(provider, 'markerOpen', !provider.markerOpen)
         },
         save: function() {
-            fetch('http://localhost:3000/providers',{
+            fetch('https://trans-friendly-providers.herokuapp.com/providers',{
             headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'

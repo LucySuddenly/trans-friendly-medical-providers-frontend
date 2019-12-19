@@ -13,7 +13,7 @@ export default Route.extend({
   },
 
   async parrallelModelHook() {
-    let json = await fetch('http://localhost:3000/providers').then(r => r.json());
+    let json = await fetch('https://trans-friendly-providers.herokuapp.com/providers').then(r => r.json());
     let decodes = json.map(async provider => {
       let { address1, address2, city, state } = provider;
       let geocodeAddress = [address1, address2, city, state].join(' ');
@@ -26,7 +26,7 @@ export default Route.extend({
 
   async sequencedModelHook() {
     let providers = [];
-    let json = await fetch('http://localhost:3000/providers').then(r => r.json());
+    let json = await fetch('https://trans-friendly-providers.herokuapp.com/providers').then(r => r.json());
     for (let provider of json) {
       let { address1, address2, city, state } = provider;
       let geocodeAddress = [address1, address2, city, state].join(' ');
