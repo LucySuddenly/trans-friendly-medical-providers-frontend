@@ -2,6 +2,7 @@ import Controller from '@ember/controller';
 import { set } from '@ember/object';
 
 export default Controller.extend({
+    showNewProvider: false,
     name: '',
     description: '',
     address1: '',
@@ -12,6 +13,9 @@ export default Controller.extend({
     website: '',
     phone: '',
     actions: {
+        toggleProviderShow: function() {
+            this.toggleProperty('showNewProvider')
+        },
         toggle: function(provider) {
             set(provider, 'markerOpen', !provider.markerOpen)
         },

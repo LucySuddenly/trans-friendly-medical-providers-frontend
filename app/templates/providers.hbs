@@ -24,41 +24,48 @@
     {{/each}}
   {{/g-map}}
 
-  {{#if errorMessage}}
-    {{#each errorMessage as |e|}}
-      <p class="error">{{e}}</p>
-    {{/each}}
-  {{/if}}
+<button {{action "toggleProviderShow"}}>Add New Provider</button>
 
-  <h3>New Provider</h3>
-  <form {{action "save" on="submit"}}>
-    <section>
-      <h4>The Basics</h4>
-      <label for="name">Name</label>
-      {{input name="name" value=this.name}}
-      <label for="description">Description</label>
-      {{input name="description" value=this.description}}
-      <label for="website">Website</label>
-      {{input name="website" value=this.website}}
-      <label for="phone">Phone</label>
-      {{input name="phone" value=this.phone}}
-    </section>
-    <section>
-      <h4>Address</h4>
-      <label for="address1">Line 1</label>
-      {{input name="address1" value=this.address1}}
-      <label for="address2">Line 2</label>
-      {{input name="address2" value=this.address2}}
-      <label for="city">City</label>
-      {{input name="city" value=this.city}}
-      <label for="state">State</label>
-      {{input name="state" value=this.state}}
-      <label for="zip">Zip</label>
-      {{input name="zip" value=this.zip}}
+{{#if showNewProvider}}
+  {{#modal-dialog
+    translucentOverlay=true
+    onClickOverlay=(action "toggleProviderShow")
+  }}
+    <h3>New Provider</h3>
+      {{#if errorMessage}}
+        {{#each errorMessage as |e|}}
+          <p class="error">{{e}}</p>
+        {{/each}}
+      {{/if}}
+    <form {{action "save" on="submit"}}>
+      <section>
+        <h4>The Basics</h4>
+        <label for="name">Name</label>
+        {{input name="name" value=this.name}}
+        <label for="description">Description</label>
+        {{input name="description" value=this.description}}
+        <label for="website">Website</label>
+        {{input name="website" value=this.website}}
+        <label for="phone">Phone</label>
+        {{input name="phone" value=this.phone}}
+      </section>
+      <section>
+        <h4>Address</h4>
+        <label for="address1">Line 1</label>
+        {{input name="address1" value=this.address1}}
+        <label for="address2">Line 2</label>
+        {{input name="address2" value=this.address2}}
+        <label for="city">City</label>
+        {{input name="city" value=this.city}}
+        <label for="state">State</label>
+        {{input name="state" value=this.state}}
+        <label for="zip">Zip</label>
+        {{input name="zip" value=this.zip}}
       </section>
       <button type="submit">Submit</button>
-  </form>
-
+    </form>
+  {{/modal-dialog}}
+{{/if}}
 
 
   {{!-- <h2>Providers</h2>
