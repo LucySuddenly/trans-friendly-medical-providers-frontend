@@ -1,7 +1,7 @@
 import Route from '@ember/routing/route';
 import { inject as service } from '@ember/service';
 
-const DECODE_IN_SEQUENCE = true;
+const DECODE_IN_SEQUENCE = false;
 
 export default Route.extend({
   geocoder: service(),
