@@ -1,5 +1,6 @@
 @import "ember-modal-dialog/ember-modal-structure.css";
 @import "ember-modal-dialog/ember-modal-appearance.css";
+
 #container{
   display: flex;
   flex-direction: column;
@@ -9,6 +10,7 @@
 h1,h3 {
   font-family: 'IBM Plex Sans', sans-serif;
   font-weight: 600;
+  text-align: center;
 }
 
 .ember-google-map {
@@ -90,5 +92,10 @@ section:nth-child(1):after {
 
 h4 {
   margin: 20px 0px 0px 0px;
+}
+
+.ember-modal-dialog {
+  overflow-y: auto;
+  height: 450px;
 }
 
