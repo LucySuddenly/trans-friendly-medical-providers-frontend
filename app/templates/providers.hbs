@@ -4,7 +4,7 @@
   
   {{#g-map lat="39.0986106" lng="-98.6166598" zoom=4 as |g|}}
     {{#each this.model as |provider|}}
-      {{#g.marker lat=provider.latlon.[0] lng=provider.latlon.[1] onClick=(action "toggle" provider) as |m|}}
+      {{#g.marker lat=provider.latlon.[0] lng=provider.latlon.[1] onClick=(action "toggleMarkerShow" provider) as |m|}}
         {{#m.infoWindow isOpen=provider.markerOpen }}
           <div class="provider-card">
             <h3>{{provider.name}}</h3>
@@ -28,15 +28,12 @@
 
 {{#if showNewProvider}}
   {{#modal-dialog
+    onClose=(action "toggleProviderShow")
+    containerClass="provider-modal"
     translucentOverlay=true
     onClickOverlay=(action "toggleProviderShow")
   }}
     <h3>New Provider</h3>
-      {{#if errorMessage}}
-        {{#each errorMessage as |e|}}
-          <p class="error">{{e}}</p>
-        {{/each}}
-      {{/if}}
     <form {{action "save" on="submit"}}>
       <section>
         <h4>The Basics</h4>
@@ -62,6 +59,19 @@
         <label for="zip">Zip</label>
         {{input name="zip" value=this.zip}}
       </section>
+      {{#if errorMessage}}
+        {{#if showError}}
+          {{#modal-dialog
+            containerClass=error-modal
+            translucentOverlay=true
+            onClickOverlay=(action "toggleErrorShow")
+            }}
+            {{#each errorMessage as |e|}}
+              <p class="error">{{e}}</p>
+            {{/each}}
+          {{/modal-dialog}}  
+        {{/if}}
+      {{/if}}
       <button type="submit">Submit</button>
     </form>
   {{/modal-dialog}}

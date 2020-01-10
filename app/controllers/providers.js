@@ -3,6 +3,7 @@ import { set } from '@ember/object';
 
 export default Controller.extend({
     showNewProvider: false,
+    showError: false,
     name: '',
     description: '',
     address1: '',
@@ -16,8 +17,11 @@ export default Controller.extend({
         toggleProviderShow: function() {
             this.toggleProperty('showNewProvider')
         },
-        toggle: function(provider) {
+        toggleMarkerShow: function(provider) {
             set(provider, 'markerOpen', !provider.markerOpen)
+        },
+        toggleErrorShow: function() {
+            this.toggleProperty('showError')
         },
         save: function() {
             fetch('https://trans-friendly-providers.herokuapp.com/providers',{
@@ -46,6 +50,7 @@ export default Controller.extend({
                     location.reload()
                 } else {
                     this.set('errorMessage', json)
+                    this.toggleProperty('showError')
                 }
             })
         }
