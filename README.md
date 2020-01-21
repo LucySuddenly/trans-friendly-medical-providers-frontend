@@ -1,7 +1,10 @@
-# trans-friendly-medical-providers-frontend
+# Trans-Friendly Medical Providers Frontend
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+This is a proof-of-concept project for a user-driven collection of trans-friendly medical providers.
+
+## Motivation
+
+Trans people may be denied medical services for a number of reasons. This app aims to crowdsource positive reports from trans people to ensure easier access to care for others.
 
 ## Prerequisites
 
@@ -24,29 +27,16 @@ You will need the following things properly installed on your computer.
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 * Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
 
-### Code Generators
+You will also need to configure a google maps api key environment variable with the key "GOOGLE_MAPS_API_KEY". You can learn more about that [here](https://developers.google.com/maps/documentation/javascript/get-api-key).
 
-Make use of the many generators for code, try `ember help generate` for more details
+## Contributing
 
-### Running Tests
+Contributions are welcome, submit a pull request!
 
-* `ember test`
-* `ember test --server`
+## License
 
-### Linting
+This project is licensed under the [GNU General Public license](https://www.gnu.org/licenses/gpl-3.0.html)
 
-* `npm run lint:hbs`
-* `npm run lint:js`
-* `npm run lint:js -- --fix`
-
-### Building
-
-* `ember build` (development)
-* `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
 
 ## Further Reading / Useful Links
 
